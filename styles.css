@@ -1,0 +1,9 @@
+body{
+    min-width: 800px;
+    min-height: 600px;
+}
+#title{
+    text-align: center;
+    color: black;
+    background-color: green;
+}
