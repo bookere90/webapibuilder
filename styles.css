@@ -1,9 +1,21 @@
 body{
-    min-width: 800px;
-    min-height: 600px;
+    width: 800px;
+    height: 600px;
+    background-color:beige;
 }
 #title{
     text-align: center;
     color: black;
     background-color: green;
+}
+#mainContainer{
+    margin-left: 0;
+    margin-right: 0;
+}
+#builderPane{
+    border: black;
+    border-style: solid;
+}
+.container{
+    padding-left: 0px;
 }

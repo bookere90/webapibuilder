@@ -8,12 +8,14 @@
         "default_icon": "icon.png"
     },
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "storage"
     ],
     "content_scripts": [ {
         "matches": ["<all_urls>"],
         "js": [
-            "jquery.js"
+            "jquery.js",
+            "main.js"
         ]
     } ]
 }
