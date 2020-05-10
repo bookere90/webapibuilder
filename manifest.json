@@ -9,7 +9,10 @@
     },
     "permissions": [
         "activeTab",
-        "storage"
+        "bookmarks",
+        "unlimitedStorage",
+        "storage",
+        "tabs"
     ],
     "content_scripts": [ {
         "matches": ["<all_urls>"],
