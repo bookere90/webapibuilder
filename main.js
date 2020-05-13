@@ -1,10 +1,16 @@
 $(document).ready(function(){;
+    // 
+    initializer(formatUrl);
 
-    setApiEndpoint(formatUrl);
+    $("#queryExecute").click(function(){
+        $("#mainFrame").attr("src", "querypage.html")
+    })
 
 });
 
-function setApiEndpoint(callback, callback2){
+function initializer(callback){
+    // pulls the URL from the tab that the extension is opened from
+    // sets the main API endpoint and saves it to chrome storage for other pages to access
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         tabUrl = tabs[0].url;
         callback(tabUrl);
@@ -36,16 +42,3 @@ function formatUrl(tabUrl){
     }
 }
 
-function getEntityList(url){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-       // Typical action to be performed when the document is ready:
-       entityList = xhttp.response;
-       return entityList;
-    }
-};
-xhttp.responseType = "json";
-xhttp.open("GET", url, true);
-xhttp.send();
-}

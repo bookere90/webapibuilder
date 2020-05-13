@@ -15,26 +15,21 @@
           <div class="navbar-collapse collapse">
             <ul class="navbar-nav">
               <li class="nav-item">
-                  <a class="nav-link" href="#">Query</a>
+                  <a class="nav-link" href="#" id="queryExecute">Query</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="#">Results</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Saved Queries</a>
               </li>
           </ul>
           </div>
       </nav>
       </div>
       <div class="row">
-        <div class="col-md-7" id="builderPane">
-            <div class="dropdown">
-              <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
+        <div class="col-md-7">
+          <iframe src="querypage.html" frameborder="0" style="height:500px;width:400px" id="mainFrame"></iframe>
         </div>
       </div>
     </div>
