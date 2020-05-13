@@ -7,21 +7,32 @@
     <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="querypagestyles.css">
     <!-- <script type="text/javascript" src="main.js"></script> -->
+
+
+    <style>
+      select{
+        max-width: 100px;
+        max-height: 20px;
+        margin-top: 4px;
+        float: right;
+      }
+      #builderPane{
+        /* border: solid; */
+      }
+    </style>
   </head>
 <body id="body">
     <div class="container">
       <div class="row">
-        <div class="col-md-7" id="builderPane">
-            <div class="dropdown">
-              <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+        <div class="col" id="builderPane">
+          <form>
+            <div class="form-group">
+              <label for="entityDropdown" id="entityLabel">Entity</label>
+              <select id="entityDropdown" class="form-control"></select>
             </div>
+          </form>
         </div>
+        <div class="col"></div>
       </div>
     </div>
 </body>
