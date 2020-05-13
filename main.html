@@ -1,16 +1,28 @@
 <html>
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+<head meta>
+    <meta charset="utf-8"> 
     <script src="jquery.js"></script>
-    <script src="main.js"></script>
+    <script type="text/javascript" src="Bootstrap/popper/popper.min.js"></script>
+    <script type="text/javascript" src="Bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="main.js"></script>
   </head>
 <body id="body">
-    <h3 id="title">WebAPI Query Builder</h3>
     <div class="container">
-      <div class="row">
+      <div class="row"></div>
+        <div id="ribbon"></div>
         <div class="col-md-7" id="builderPane">
           <h3>Query Builder</h3>
+          <div class="dropdown">
+            <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-5" id="outputPane">          
         </div>

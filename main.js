@@ -1,14 +1,8 @@
 $(document).ready(function(){;
-    setApiEndpoint(formatUrl, queryBuilder);
+
+    setApiEndpoint(formatUrl);
 
 });
-
-function getApiEndpoint(baseApiUrl){
-    chrome.storage.local.get("apiEndpoint", function(data){
-        baseApiUrl = data.apiEndpoint;
-    });
-}
-
 
 function setApiEndpoint(callback, callback2){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {

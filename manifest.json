@@ -11,14 +11,14 @@
         "activeTab",
         "bookmarks",
         "unlimitedStorage",
-        "storage",
-        "tabs"
+        "storage"
     ],
     "content_scripts": [ {
         "matches": ["<all_urls>"],
         "js": [
             "jquery.js",
-            "main.js"
+            "main.js",
+            "Bootstrap/js/bootstrap.js"            
         ]
     } ]
 }
