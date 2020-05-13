@@ -1,15 +1,13 @@
 .container{
     background-color: #FFFFFF;
     min-height: 580px;
+    min-width: 780px;
     padding-left: 0px;
     padding-right: 0px;
 }
 body{
-    width: 770px;
-    height: 600px;
-    background-color: #602ffa;
-    padding-left: 35px;
-    padding-right: 35px;
+    width: 780px;
+    height: 580px;
 }
 
 #mainContainer{

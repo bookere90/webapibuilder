@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://google.com",
+            "url": "https://superamazintestbox.crm.dynamics.com",
             "webRoot": "${workspaceFolder}"
         }
     ]
