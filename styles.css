@@ -11,24 +11,29 @@ body{
     padding-left: 35px;
     padding-right: 35px;
 }
-#ribbon{
-    color: #E8E8E8;
-    background-color: #099dab;
-    padding-bottom: 20px;
-    padding-right: 0px !important;
-}
+
 #mainContainer{
     margin-left: 0;
     margin-right: 0;
 }
 #dropdownMenuButton{
-    margin-top: 25px;
+    margin-top: 20px;
 }
 .btn.btn-secondary{
     width: 300px;
     height: 33.33px;
+    background-color: #FFFFFF;
+    margin-top: 0px !important;
+    margin-left: 10px !important;
 }
 .dropdown-menu {
     width: 300px;
     height: 400px;
+}
+.dropdown{
+    margin-top: 20px;
+}
+#builderPane{
+    margin-top: 20px;
+    margin-left: 20px;
 }

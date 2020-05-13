@@ -10,21 +10,29 @@
   </head>
 <body id="body">
     <div class="container">
-      <div class="row"></div>
-        <div id="ribbon"></div>
+      <div>
+        <nav class="navbar navbar-expand navbar-dark bg-primary">
+          <div class="navbar-collapse collapse">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">File</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      </div>
+      <div class="row">
         <div class="col-md-7" id="builderPane">
           <h3>Query Builder</h3>
-          <div class="dropdown">
-            <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-5" id="outputPane">          
         </div>
       </div>
     </div>
