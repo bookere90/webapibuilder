@@ -10,18 +10,30 @@
 
     <style>
       select{
-        max-width: 110px;
-        max-height: 20px;
-        margin-top: 4px;
-        float: right;
+        max-width: 150px;
+        max-height: 25px;
+        margin-right: max;
+        display: inline;
       }
       #builderPane{
         margin-left: 0px;
       }
       .form-group{
-        width: 160px;
-
+        width: auto;
       }
+      .form-group .form-inline{
+        width: auto;
+      }
+      label{
+        display: inline;
+      }
+      select .form-control{
+        display: inline;
+      }
+      form{
+        margin-top: 2%;
+      }
+      
     </style>
   </head>
 <body id="body">
@@ -29,13 +41,16 @@
       <div class="row">
         <div class="col" id="builderPane">
           <form>
-            <div class="form-group">
-              <label for="entityDropdown" id="entityLabel">Entity</label>
+            <div class="form-group row">
+              <label for="entityDropdown" id="entityLabel" class="col-sm-2">Entity</label>
               <select id="entityDropdown" class="form-control"></select>
+            </div>
+            <div class="form-group row">
+              <label for="attributeDropdown" id="attributeLabel" class="col-sm-2">Property</label>
+              <select id="attributeDropdown" class="form-control"></select>
             </div>
           </form>
         </div>
-        <div class="col"></div>
       </div>
     </div>
 </body>

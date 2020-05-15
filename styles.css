@@ -38,3 +38,9 @@ div{
 .nav-link{
     color: #000000 !important;
 }
+iframe{
+    border: none;
+    display: block;
+    max-width: 780px;
+    max-height: 500px;
+}
