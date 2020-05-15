@@ -9,6 +9,10 @@ body{
     width: 780px;
     height: 580px;
 }
+div{
+    max-height: 580px;
+    max-width: 780px;
+}
 
 #mainContainer{
     margin-left: 0;
@@ -30,10 +34,6 @@ body{
 }
 .dropdown{
     margin-top: 20px;
-}
-#builderPane{
-    margin-top: 20px;
-    margin-left: 20px;
 }
 .nav-link{
     color: #000000 !important;
