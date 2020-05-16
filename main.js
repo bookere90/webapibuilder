@@ -4,7 +4,7 @@ $(document).ready(function(){;
 
     $("#queryExecute").click(function(){
         $("#mainFrame").attr("src", "querypage.html")
-    })
+    });
 
     function formatUrl(tabUrl){
         //     // this function needs to get the environment URL and appends 'api/data/v9.1' to it
@@ -42,6 +42,8 @@ function initializer(callback){
         callback(tabUrl);
     });
 }
+
+
 
 
 

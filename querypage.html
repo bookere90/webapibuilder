@@ -2,6 +2,7 @@
 <head meta>
     <meta charset="utf-8"> 
     <script src="jquery.js"></script>
+    <script src="querypage.js"></script>
     <script type="text/javascript" src="Bootstrap/popper/popper.min.js"></script>
     <script type="text/javascript" src="Bootstrap/js/bootstrap.js"></script>
     <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
@@ -10,10 +11,9 @@
 
     <style>
       select{
-        max-width: 150px;
-        max-height: 25px;
+        max-width: 375px;
+        max-height: 40px;
         margin-right: max;
-        display: inline;
       }
       #builderPane{
         margin-left: 0px;
@@ -21,19 +21,20 @@
       .form-group{
         width: auto;
       }
-      .form-group .form-inline{
-        width: auto;
-      }
-      label{
-        display: inline;
-      }
-      select .form-control{
-        display: inline;
-      }
       form{
         margin-top: 2%;
       }
-      
+      button{
+        width: 50%;
+      } 
+      .form-group-row{
+        margin-top: 100px;
+        margin-bottom: 100px;
+      }
+      #entityDropdown .form-control{
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+      }
     </style>
   </head>
 <body id="body">
@@ -42,12 +43,17 @@
         <div class="col" id="builderPane">
           <form>
             <div class="form-group row">
-              <label for="entityDropdown" id="entityLabel" class="col-sm-2">Entity</label>
+              <label for="entityDropdown" id="entityLabel" class="col-md-2">Entity</label>
               <select id="entityDropdown" class="form-control"></select>
             </div>
             <div class="form-group row">
               <label for="attributeDropdown" id="attributeLabel" class="col-sm-2">Property</label>
-              <select id="attributeDropdown" class="form-control"></select>
+              <select id="attributeDropdown" class="form-control">
+              </select>
+            </div>
+            <div class="form-group row col-sm-2">
+              <button type="btn btn-primary">+</button>
+              <select name="selectAdd" id=""></select>
             </div>
           </form>
         </div>
