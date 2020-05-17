@@ -23,7 +23,7 @@ $(document).ready(function(){;
                 apiEndpoint = formattedUrl + "/api/data/v9.1";
                 // store this in local storage for later use
                 chrome.storage.local.set({"apiEndpoint": apiEndpoint}, function(){
-                    console.log("apiEndpoint set to ", apiEndpoint);
+                    // console.log("apiEndpoint set to ", apiEndpoint);
                 });
             }
             else{

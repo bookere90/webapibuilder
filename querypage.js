@@ -1,63 +1,50 @@
 $(document).ready(function(){;
 
-    storeEntities(getEntityCollections);
+    initializer(setEntityMetaData, getEntityCollections, populateEntityList);
 
-    // perhaps optimize this later.
-    function populateEntityList(){
-        chrome.storage.local.get(["entityArray"], function(result){
-            let entityList = result.entityArray["value"];
-            for(var i = 0; i < entityList.length; i++){
-                let entityCollection = entityList[i].name;
-                $("#entityDropdown").append($(`<option>${entityCollection}</option>`));
+    function populateEntityList(metadataArray){
+        console.log("In the function. Here is the array: ", metadataArray);
+        let unsortedArray = [];
+        for(i = 0; i < Object.keys(metadataArray["value"]).length; i++){
+            let collectionName = metadataArray["value"][i].LogicalCollectionName;
+            if(collectionName != null){
+                unsortedArray.push(collectionName);
             }
-        });
+        }
+        let sortedArray = unsortedArray.sort();
+        for(i = 0; i < sortedArray.length; i++){
+            $("#entityDropdown").append(`<option>${sortedArray[i]}</option>`);
+        }
     }
-    populateEntityList();
-    prepareEntityMetadata();
 });
 
-function storeEntities(callback){
+function getEntityCollections(entityMetadata, callback){
+    let retrievedMetadataArray = entityMetadata;
+    callback(retrievedMetadataArray);
+}
+
+function initializer(callback, cb2, cb3){
     chrome.storage.local.get(["apiEndpoint"], function(result){
-        console.log(result.apiEndpoint);
-        callback(result.apiEndpoint);
+        callback(result.apiEndpoint, cb2, cb3);
     });
 }
 
-function getEntityCollections(url){
+function setEntityMetaData(url, callback, cb3){
+    url += "/EntityDefinitions?$select=LogicalName, LogicalCollectionName";
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-       // Typical action to be performed when the document is ready:
-       var entityList = JSON.parse(xhttp.response);
-       console.log(entityList);
-       chrome.storage.local.set({"entityArray": entityList}, function(){
-           console.log("entityArrray is set.");
-       });
+    // Typical action to be performed when the document is ready:
+    var entityMetadata = JSON.parse(xhttp.response);
+    chrome.storage.local.set({"entityMetadataArray": entityMetadata}, function(){
+        console.log("entityMetadataArray is set.");
+        callback(entityMetadata, cb3);
+    });
     }
 };
-
 xhttp.open("GET", url, true);
 xhttp.send();
 }
 
-function prepareEntityMetadata(){
-    chrome.storage.local.get(["entityArray"], function(result){
-        entities = result.entityArray;
-        let entityCollection;
-        let entityLogicalName;
-        let entityLogicalNameArray = [];
-        for(var i = 0; i < entities["value"].length; i++){
-            entityCollection = entities["value"][i].name;
-            let lastChar = entityCollection.charAt(entityCollection.length-1);
-            if(lastChar == "s"){
-                entityLogicalName = entityCollection.substring(0, entityCollection.length -1);          
-                entityLogicalNameArray.push(entityLogicalName);
-            }
-            else{
-                entityLogicalNameArray.push(entityCollection);
-            }
-        }
-        console.log(entityLogicalNameArray);
-    });
-}
+
 
