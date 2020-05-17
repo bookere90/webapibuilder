@@ -1,23 +1,20 @@
 $(document).ready(function(){;
 
-    storeEntities(getEntityList);
+    storeEntities(getEntityCollections);
 
     // perhaps optimize this later.
     function populateEntityList(){
         chrome.storage.local.get(["entityArray"], function(result){
             let entityList = result.entityArray["value"];
             for(var i = 0; i < entityList.length; i++){
-                let entityName = entityList[i].name;
-                $("#entityDropdown").append($(`<option>${entityName}</option>`));
+                let entityCollection = entityList[i].name;
+                $("#entityDropdown").append($(`<option>${entityCollection}</option>`));
             }
         });
     }
-
     populateEntityList();
-
+    prepareEntityMetadata();
 });
-
-
 
 function storeEntities(callback){
     chrome.storage.local.get(["apiEndpoint"], function(result){
@@ -26,7 +23,7 @@ function storeEntities(callback){
     });
 }
 
-function getEntityList(url){
+function getEntityCollections(url){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -38,7 +35,29 @@ function getEntityList(url){
        });
     }
 };
-xhttp.responseType = "json";
+
 xhttp.open("GET", url, true);
 xhttp.send();
 }
+
+function prepareEntityMetadata(){
+    chrome.storage.local.get(["entityArray"], function(result){
+        entities = result.entityArray;
+        let entityCollection;
+        let entityLogicalName;
+        let entityLogicalNameArray = [];
+        for(var i = 0; i < entities["value"].length; i++){
+            entityCollection = entities["value"][i].name;
+            let lastChar = entityCollection.charAt(entityCollection.length-1);
+            if(lastChar == "s"){
+                entityLogicalName = entityCollection.substring(0, entityCollection.length -1);          
+                entityLogicalNameArray.push(entityLogicalName);
+            }
+            else{
+                entityLogicalNameArray.push(entityCollection);
+            }
+        }
+        console.log(entityLogicalNameArray);
+    });
+}
+
